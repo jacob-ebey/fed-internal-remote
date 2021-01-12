@@ -5,16 +5,6 @@ async function someKindOfDynamicLoading() {
   };
 }
 
-const modProm = someKindOfDynamicLoading();
-let mod;
-
-module.exports = {
-  init: async (...args) => {
-    mod = await modProm;
-
-    await mod.init(...args);
-  },
-  get: (...args) => {
-    return mod.get(...args);
-  },
-};
+module.exports = (async () => {
+  return await someKindOfDynamicLoading();
+})();
