@@ -5,6 +5,6 @@ async function someKindOfDynamicLoading() {
   };
 }
 
-module.exports = (async () => {
+export default (async () => {
   return await someKindOfDynamicLoading();
 })();
